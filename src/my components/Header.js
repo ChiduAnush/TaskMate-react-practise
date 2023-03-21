@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export default function header(props) {
     return (
@@ -26,4 +27,20 @@ export default function header(props) {
             </div>
         </nav>
     )
+}
+
+header.defaultProps = {
+    title: "Your Title Heree",  //will be shown if user has not put in any title in the parent element.
+    // searchBar: true  // so deafult value to be taken for searchBar is true, if user doesnt give anyhting in parent element
+}
+
+
+
+
+//mentiones that the title is a string
+header.propTypes = {
+    title: PropTypes.string,  //so will give error in console if u pass a number as the title.
+    searchBar: PropTypes.bool.isRequired  //.isrequired will make it compulsory for user to put some value fo this variable. either truw or false in this case.
+    //if the user doesnt pass anything, then error(check in consooe).
+
 }
