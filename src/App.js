@@ -2,7 +2,7 @@ import './App.css';
 import Header from "./my components/Header";
 // import { Todos } from './my components/Todos';
 import { Footer } from './my components/Footer';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 // import { AddTodo } from "./my components/AddTodo";
 import { About } from "./my components/About";
 import { Home } from "./my components/Home";
@@ -15,72 +15,72 @@ import {
 
 
 function App() {
-  let initTodo;
+  // let initTodo;
 
-  if (localStorage.getItem("todos") === null) {
-    initTodo = [];
-  } else {
-    initTodo = JSON.parse(localStorage.getItem("todos"));
-  }
+  // if (localStorage.getItem("todos") === null) {
+  //   initTodo = [];
+  // } else {
+  //   initTodo = JSON.parse(localStorage.getItem("todos"));
+}
 
-  // const onDelete = (todo) => {
-  //   console.log("I am on delete of todo", todo);
+// const onDelete = (todo) => {
+//   console.log("I am on delete of todo", todo);
 
-  //   setTodos(todos.filter((e) => {
-  //     return e !== todo;
-  //   }));
-  //   localStorage.setItem("todos", JSON.stringify(todos));
-  // }
+//   setTodos(todos.filter((e) => {
+//     return e !== todo;
+//   }));
+//   localStorage.setItem("todos", JSON.stringify(todos));
+// }
 
-  // const addTodo = (title, desc) => {
-  //   console.log("i am adding this todo", title, desc)
-  //   let sno;
-  //   if (todos.length == 0) {
-  //     sno = 0;
-  //   } else {
-  //     sno = todos[todos.length - 1].sno + 1;
-  //   }
-  //   const myTodo = {
-  //     sno: sno,
-  //     title: title,
-  //     desc: desc
-  //   }
-  //   setTodos([...todos, myTodo]);
-  //   console.log(myTodo);
-  // }
+// const addTodo = (title, desc) => {
+//   console.log("i am adding this todo", title, desc)
+//   let sno;
+//   if (todos.length == 0) {
+//     sno = 0;
+//   } else {
+//     sno = todos[todos.length - 1].sno + 1;
+//   }
+//   const myTodo = {
+//     sno: sno,
+//     title: title,
+//     desc: desc
+//   }
+//   setTodos([...todos, myTodo]);
+//   console.log(myTodo);
+// }
 
 
-  // const [todos, setTodos] = useState([
-  //   {
-  //     sno: 1,
-  //     title: "Go to the market",
-  //     desc: "you need to go to the market to get this job done"
-  //   },
-  //   {
-  //     sno: 2,
-  //     title: "go to the mall",
-  //     desc: "you need to go to the market to get this job done2"
-  //   },
-  //   {
-  //     sno: 3,
-  //     title: "go to the ghat",
-  //     desc: "you need to go to the market to get this job done3"
-  //   }
+// const [todos, setTodos] = useState([
+//   {
+//     sno: 1,
+//     title: "Go to the market",
+//     desc: "you need to go to the market to get this job done"
+//   },
+//   {
+//     sno: 2,
+//     title: "go to the mall",
+//     desc: "you need to go to the market to get this job done2"
+//   },
+//   {
+//     sno: 3,
+//     title: "go to the ghat",
+//     desc: "you need to go to the market to get this job done3"
+//   }
 
-  // ]);
-  // const [todos, setTodos] = useState(initTodo);
-  // useEffect(() => {
-  //   localStorage.setItem("todos", JSON.stringify(todos));
+// ]);
+// const [todos, setTodos] = useState(initTodo);
+// useEffect(() => {
+//   localStorage.setItem("todos", JSON.stringify(todos));
 
-  // }, [todos])
+// }, [todos])
 
-  return (
+return (
 
-    <>
-      <Router>
-        <Header title="TaskMate" searchBar={false} />
+  <>
+    <Router>
+      <Header title="TaskMate" searchBar={false} />
 
-        {/* <Switch>
+      {/* <Switch>
           <Route exact path="/" render={() => {
             return (
               <>
@@ -96,8 +96,8 @@ function App() {
         </Switch> */}
 
 
-        <Routes>
-          {/* <Route path="/" element={() => {
+      <Routes>
+        {/* <Route path="/" element={() => {
             return (
               <>
                 <AddTodo addTodo={addTodo} />
@@ -106,16 +106,16 @@ function App() {
               </>
             )
           }} /> */}
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
 
 
 
-        <Footer />
-      </Router>
-    </>
-  );
+      <Footer />
+    </Router>
+  </>
+);
 }
 
 export default App;
