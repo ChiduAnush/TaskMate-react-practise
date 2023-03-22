@@ -10,8 +10,7 @@ import { Home } from "./my components/Home";
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  Link
+  Route
 } from "react-router-dom"
 
 
