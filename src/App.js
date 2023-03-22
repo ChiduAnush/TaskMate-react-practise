@@ -3,6 +3,8 @@ import Header from "./my components/Header";
 import { Todos } from './my components/Todos';
 import { Footer } from './my components/Footer';
 import { useState } from 'react';
+import { AddTodo } from "./my components/AddTodo";
+
 
 function App() {
 
@@ -36,6 +38,7 @@ function App() {
 
     <>
       <Header title="TaskMate" searchBar={false} />
+      <AddTodo />
       <Todos todos={todos} onDelete={onDelete} />
       <Footer />
     </>
