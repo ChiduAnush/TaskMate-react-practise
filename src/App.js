@@ -4,6 +4,14 @@ import { Todos } from './my components/Todos';
 import { Footer } from './my components/Footer';
 import { useState, useEffect } from 'react';
 import { AddTodo } from "./my components/AddTodo";
+import { About } from "./my components/About";
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom"
 
 
 function App() {
@@ -69,10 +77,41 @@ function App() {
   return (
 
     <>
-      <Header title="TaskMate" searchBar={false} />
-      <AddTodo addTodo={addTodo} />
-      <Todos todos={todos} onDelete={onDelete} />
-      <Footer />
+      <Router>
+        <Header title="TaskMate" searchBar={false} />
+
+        {/* <Switch>
+          <Route exact path="/" render={() => {
+            return (
+              <>
+                <AddTodo addTodo={addTodo} />
+                <Todos todos={todos} onDelete={onDelete} />
+              </>)
+          }}>
+          </Route>
+
+          <Route exact path="/about">
+            <About />
+          </Route>
+        </Switch> */}
+        <Routes>
+          <Route path=" /" element={() => {
+            return (
+              <>
+                <AddTodo addTodo={addTodo} />
+                <Todos todos={todos} onDelete={onDelete} />
+
+              </>
+            )
+          }} />
+          <Route path="/about/*" element={<About />} />
+        </Routes>
+
+        <AddTodo addTodo={addTodo} />
+        <Todos todos={todos} onDelete={onDelete} />
+
+        <Footer />
+      </Router>
     </>
   );
 }
