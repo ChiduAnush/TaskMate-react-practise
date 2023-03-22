@@ -2,10 +2,18 @@ import './App.css';
 import Header from "./my components/Header";
 import { Todos } from './my components/Todos';
 import { Footer } from './my components/Footer';
+import { useState } from 'react';
 
 function App() {
 
-  let todos = [
+  const onDelete = (todo) => {
+    console.log("I am on delete of todo", todo);
+    setTodos(todos.filter((e) => {
+      return e !== todo;
+    }));
+  }
+
+  const [todos, setTodos] = useState([
     {
       sno: 1,
       title: "Go to the market",
@@ -22,13 +30,13 @@ function App() {
       desc: "you need to go to the market to get this job done3"
     }
 
-  ]
+  ]);
 
   return (
 
     <>
       <Header title="TaskMate" searchBar={false} />
-      <Todos todos={todos} />
+      <Todos todos={todos} onDelete={onDelete} />
       <Footer />
     </>
   );
