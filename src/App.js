@@ -5,6 +5,7 @@ import { Footer } from './my components/Footer';
 import { useState, useEffect } from 'react';
 import { AddTodo } from "./my components/AddTodo";
 import { About } from "./my components/About";
+import { Home } from "./my components/Home";
 
 import {
   BrowserRouter as Router,
@@ -94,8 +95,10 @@ function App() {
             <About />
           </Route>
         </Switch> */}
+
+
         <Routes>
-          <Route path=" /" element={() => {
+          {/* <Route path="/" element={() => {
             return (
               <>
                 <AddTodo addTodo={addTodo} />
@@ -103,12 +106,12 @@ function App() {
 
               </>
             )
-          }} />
-          <Route path="/about/*" element={<About />} />
+          }} /> */}
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
         </Routes>
 
-        <AddTodo addTodo={addTodo} />
-        <Todos todos={todos} onDelete={onDelete} />
+
 
         <Footer />
       </Router>
