@@ -13,6 +13,9 @@ export const AddTodo = (props) => {
             alert("please fill out all the details")
         } else {
             props.addTodo(title, desc);
+            setTitle("")
+            setDesc("")
+
         }
 
     }
