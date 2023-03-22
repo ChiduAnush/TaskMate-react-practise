@@ -12,6 +12,8 @@ export const About = () => {
                 You can add tasks, make sure to type in both the title and description.<br />
                 And if you have finished off a task, time to delete them! yay! <br />
 
+                P.S. you wont need to worry about your tasks getting lost. It will be there even if you refresh the page :)
+
 
 
 
